@@ -1,0 +1,121 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public class CongNhanVeSinh extends Nguoi implements Comparable<CongNhanVeSinh>{
+    private final float LCB = 2500000;
+    protected int soDienThoai;
+    protected int soGioTangCa;
+    private double hsl;
+    
+    protected String maCongNhanVeSinh;
+    
+
+    public CongNhanVeSinh() {
+    }
+
+    public CongNhanVeSinh(int soDienThoai, int soGioTangCa, double hsl, float luongCoBan, String maCongNhanVeSinh, String hoTen, String gioiTinh, String diaChi, int namSinh) {
+        super(hoTen, gioiTinh, diaChi, namSinh);
+        this.soDienThoai = soDienThoai;
+        this.soGioTangCa = soGioTangCa;
+        this.hsl = hsl;
+        
+        this.maCongNhanVeSinh = maCongNhanVeSinh;
+    }
+
+    
+    public int getSoDienThoai() {
+        return soDienThoai;
+    }
+
+    public void setSoDienThoai(int soDienThoai) {
+        this.soDienThoai = soDienThoai;
+    }
+
+    public int getSoGioTangCa() {
+        return soGioTangCa;
+    }
+
+    public void setSoGioTangCa(int soGioTangCa) {
+        this.soGioTangCa = soGioTangCa;
+    }
+
+    public String getMaCongNhanVeSinh() {
+        return maCongNhanVeSinh;
+    }
+
+    public void setMaCongNhanVeSinh(String maCongNhanVeSinh) {
+        this.maCongNhanVeSinh = maCongNhanVeSinh;
+    }
+
+    public float getLCB() {
+        return LCB;
+    }
+    
+    @Override
+    public void nhap() {
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Nhap so dien thoai: ");
+        soDienThoai = sc.nextInt();//{
+        //while(soDienThoai < 10 || soDienThoai > 0);}
+        //System.out.println("Nhap lai:");
+        
+        super.nhap(); //To change body of generated methods, choose Tools | Templates.
+        
+        System.out.println("So gio tang ca: ");
+        soGioTangCa = sc.nextInt();
+        
+        
+        System.out.println("Nhap he so luong: ");
+        hsl = sc.nextDouble();
+        
+        System.out.println("Nhap ma cong nhan: ");
+        sc.nextLine();
+        maCongNhanVeSinh = sc.nextLine();
+        
+        
+    }
+
+    public void xuat() {
+        super.xuat();
+        System.out.println("\tNhap so dien thoai: " + soDienThoai);
+        
+        //System.out.println("\tNhap so nam kinh nghiem: " + soNamKn);
+        
+        System.out.println("\tHe so luong: " + hsl);
+        
+        System.out.println("\tNhap so gio làm them: " + soGioTangCa);
+        
+        System.out.println("\tLuong: " +Salary());
+    }
+    
+    
+    // hàm lấy thông tin
+    // tính lương
+    
+    public int Salary() {
+        int s =1;
+        s = (int) (LCB * hsl * (1 + soGioTangCa));
+        return s;
+    }
+        //To change body of generated methods, choose Tools | Templates.
+
+    @Override
+    public String toString() {
+        return "CongNhanVeSinh{" + "LCB=" + LCB + ", soDienThoai=" + soDienThoai + ", soGioTangCa=" + soGioTangCa + ", hsl=" + hsl +   ", maCongNhanVeSinh=" + maCongNhanVeSinh + '}';
+    }
+    
+// Sắp xếp 
+    // 
+    @Override
+    public int compareTo(CongNhanVeSinh o) {
+        if(maCongNhanVeSinh.compareToIgnoreCase(o.maCongNhanVeSinh)>0) return 1;
+        if(maCongNhanVeSinh.compareToIgnoreCase(o.maCongNhanVeSinh)<0) return -1;//đổi chỗ lại
+         return 0;
+    }
+
+ 
+}
