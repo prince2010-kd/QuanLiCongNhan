@@ -1,0 +1,107 @@
+package ENTITY;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public  class Nguoi {
+    
+    private String hoTen;
+    private String gioiTinh;
+    private String diaChi;
+    private int namSinh;
+    
+    
+    
+    Scanner sc = new Scanner(System.in);
+
+    public Nguoi() {
+    }
+
+    public Nguoi(String hoTen, String gioiTinh, String diaChi, int namSinh) {
+        this.hoTen = hoTen;
+        this.gioiTinh = gioiTinh;
+        this.diaChi = diaChi;
+        this.namSinh = namSinh;
+    }
+
+    
+
+    public String getHoTen() {
+        return hoTen;
+    }
+
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public int getNamSinh() {
+        return namSinh;
+    }
+
+    public void setNamSinh(int namSinh) {
+        this.namSinh = namSinh;
+    }
+    
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+    
+   
+    @Override
+    public String toString() {
+        return "Nguoi{" + "hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", diaChi=" + diaChi + ", namSinh=" + namSinh  +", sc=" + sc + '}';
+    }
+    
+    
+    public void nhap() {
+        System.out.print("Nhap ho ten: ");
+        sc.nextLine();
+        hoTen = sc.nextLine();
+        
+        System.out.print("Nhap nam sinh: ");
+        namSinh = sc.nextInt();{
+        while(namSinh < 1900 || namSinh > 2002);}
+        
+        System.out.print("Nhap gioi tinh: ");
+        sc.nextLine();
+        gioiTinh = sc.nextLine();
+        
+        System.out.println("Nhap dia chi: ");
+        diaChi = sc.nextLine();
+        
+    }
+     
+   
+    public void xuat() {
+        System.out.println("Ho ten la: \t" + hoTen);
+        System.out.println("Nam sinh la: \t" + namSinh);
+        System.out.println("Gioi tinh la: \t" + gioiTinh);
+        System.out.println("Dia chi la: \t" + diaChi);
+      // System.out.println("Luong co ban: \t" + luongCoBan);
+        
+}
+    
+}
