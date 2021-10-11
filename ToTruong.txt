@@ -1,0 +1,86 @@
+public class ToTruong extends Nguoi implements Comparable<ToTruong>{
+    String MaToTruong;
+    String GmailToTruong;
+    int SoNamKinhNghiem;
+    int LuongToTruong;
+
+    public ToTruong() {
+    }
+
+    public ToTruong(String MaToTruong, String GmailToTruong, int SoNamKinhNghiem, int LuongToTruong, String hoTen, String gioiTinh, String diaChi, int namSinh) {
+        super(hoTen, gioiTinh, diaChi, namSinh);
+        this.MaToTruong = MaToTruong;
+        this.GmailToTruong = GmailToTruong;
+        this.SoNamKinhNghiem = SoNamKinhNghiem;
+        this.LuongToTruong = LuongToTruong;
+    }
+
+    
+
+    public String getMaToTruong() {
+        return MaToTruong;
+    }
+
+    public void setMaToTruong(String MaToTruong) {
+        this.MaToTruong = MaToTruong;
+    }
+
+    public String getGmailToTruong() {
+        return GmailToTruong;
+    }
+
+    public void setGmailToTruong(String GmailToTruong) {
+        this.GmailToTruong = GmailToTruong;
+    }
+
+    public int getSoNamKinhNghiem() {
+        return SoNamKinhNghiem;
+    }
+
+    public void setSoNamKinhNghiem(int SoNamKinhNghiem) {
+        this.SoNamKinhNghiem = SoNamKinhNghiem;
+    }
+
+    public int getLuongToTruong() {
+        return LuongToTruong;
+    }
+
+    public void setLuongToTruong(int LuongToTruong) {
+        this.LuongToTruong = LuongToTruong;
+    }
+
+    
+    @Override
+    public void nhap(){
+        System.out.println("nhap ma To Truong: ");
+        MaToTruong = sc.nextLine();
+        System.out.println("nhap Gmail cua To Truong: ");
+        GmailToTruong = sc.nextLine();
+        System.out.println("nhap so nam kinh nghiem cua To Truong: ");
+        SoNamKinhNghiem = sc.nextInt();
+        System.out.println("nhap so luong cua To Truong: ");
+        LuongToTruong = sc.nextInt();
+        super.nhap();
+    }
+    @Override
+    public String toString()
+    {
+        return this.getMaToTruong() +"|" + this.getGmailToTruong() +" | "+ this.getSoNamKinhNghiem()+ " | "+ this.getLuongToTruong() + " | " + super.toString();
+    }
+    @Override
+    public int compareTo(ToTruong o) {
+        if(MaToTruong.compareToIgnoreCase(o.MaToTruong)>0) return 1;
+        if(MaToTruong.compareToIgnoreCase(o.MaToTruong)<0) return -1;
+        
+        return 0;
+    }
+
+    public void getSoNamKinhNghiem(int soNamKinhNghiem) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void getGmailToTruong(String gmailToTruong) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}

@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public class CongNhanXayDung extends Nguoi implements Comparable<CongNhanXayDung>{
+    private String Macn;
+    private String Vitri;
+    private int Luongphu;
+    private int Luongchinh;
+
+    public CongNhanXayDung() {
+    }
+
+    public CongNhanXayDung(String Macn, String Vitri, int Luongphu, int Luongchinh, String hoTen, String gioiTinh, String diaChi, int namSinh) {
+        super(hoTen, gioiTinh, diaChi, namSinh);
+        this.Macn = Macn;
+        this.Vitri = Vitri;
+        this.Luongphu = Luongphu;
+        this.Luongchinh = Luongchinh;
+    }
+    
+    
+
+    
+
+    public String getMacn() {
+        return Macn;
+    }
+
+    public void setMacn(String Macn) {
+        this.Macn = Macn;
+    }
+
+    public String getVitri() {
+        return Vitri;
+    }
+
+    public void setVitri(String Vitri) {
+        this.Vitri = Vitri;
+    }
+
+    public int getLuongphu() {
+        return Luongphu;
+    }
+
+    public void setLuongphu(int Luongphu) {
+        this.Luongphu = Luongphu;
+    }
+
+    public int getLuongchinh() {
+        return Luongchinh;
+    }
+
+    public void setLuongchinh(int Luongchinh) {
+        this.Luongchinh = Luongchinh;
+    }
+    
+    @Override
+    public void nhap(){
+        super.nhap();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập mã: ");
+        Macn = sc.nextLine();
+        System.out.println("Nhập vị trí: ");
+        Vitri = sc.nextLine();
+        System.out.println("Nhập lương phụ trợ: ");
+        Luongphu = sc.nextInt();
+        System.out.println("\n");
+    }
+
+    @Override
+    public String toString() {
+        return "CNXayDung{" + "Macn=" + Macn + ", Vitri=" + Vitri + ", Luongphu=" + Luongphu + ", Luongchinh=" + Luongchinh + '}';
+    }
+
+    @Override
+    public int compareTo(CongNhanXayDung o) {
+        if(Macn.compareToIgnoreCase(o.Macn)>0) return 1;
+        if(Macn.compareToIgnoreCase(o.Macn)<0) return -1;
+        return 0;
+    }
+    
+}
+

@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public class CongNhanLaiMay extends Nguoi implements Comparable<CongNhanLaiMay>{
+    
+    protected String macn;
+    protected Float luonglm;
+    protected String loaimay;
+    private Float luong;
+
+    public CongNhanLaiMay() {
+    }
+
+    public CongNhanLaiMay(String macn, Float luonglm, String loaimay, Float luong, String hoTen, String gioiTinh, String diaChi, int namSinh) {
+        super(hoTen, gioiTinh, diaChi, namSinh);
+        this.macn = macn;
+        this.luonglm = luonglm;
+        this.loaimay = loaimay;
+        this.luong = luong;
+    }
+    
+
+    
+
+    public String getMacn() {
+        return macn;
+    }
+
+    public Float getLuonglm() {
+        return luong;
+    }
+
+    public String getLoaimay() {
+        return loaimay;
+    }
+
+    public void setMacn(String macn) {
+        this.macn = macn;
+    }
+
+    public void setLuong(Float luong) {
+        this.luonglm = luonglm;
+    }
+
+    public void setLoaimay(String loaimay) {
+        this.loaimay = loaimay;
+    }
+    @Override
+    public void nhap()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("nhập mã công nhân : ");
+        macn=sc.nextLine();
+        System.out.println("loại máy đang lái : ");
+        loaimay=sc.nextLine();
+        System.out.println("lương : ");
+        luonglm=sc.nextFloat();
+    }
+
+   @Override
+    public String toString()
+    {
+        return this.getMacn() + " | " + super.toString() + " | " + this.getLoaimay()+ " | " + this.getLuonglm();
+    }
+    @Override
+    public int compareTo(CongNhanLaiMay o) {
+        if(macn.compareToIgnoreCase(o.macn)>0) return 1;
+        if(macn.compareToIgnoreCase(o.macn)<0) return -1;
+         return 0;
+    }
+ 
+}
+    
